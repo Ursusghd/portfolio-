@@ -580,7 +580,8 @@ h1 {
 /* --- MOBILE --- */
 @media (max-width: 992px) {
     h1 { font-size: 3.5rem; }
-    .hero-content { grid-template-columns: 1fr; text-align: center; }
+    .hero { padding-top: 140px; height: auto; min-height: 100vh; }
+    .hero-content { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
     .hero-text { order: 2; }
     .hero-image { order: 1; }
     .about-grid { grid-template-columns: 1fr; }

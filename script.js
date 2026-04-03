@@ -68,7 +68,7 @@ function animateParticles() {
         p.update();
         p.draw();
     });
-    
+
     // Connect particles
     for (let i = 0; i < particles.length; i++) {
         for (let j = i; j < particles.length; j++) {
@@ -104,7 +104,7 @@ const phrases = [
     "Co-fondateur SNOW",
     "Data Scientist & ML Engineer",
     "Élève Ingénieur en Statistiques & Finance  ",
-    "Python , Mathématiques & Statistiques"
+    "Python & Statistiques"
 ];
 let phraseIndex = 0;
 let charIndex = 0;
@@ -113,7 +113,7 @@ let typingSpeed = 100;
 
 function type() {
     const currentPhrase = phrases[phraseIndex];
-    
+
     if (isDeleting) {
         textElement.textContent = currentPhrase.substring(0, charIndex - 1);
         charIndex--;
@@ -138,7 +138,7 @@ function type() {
 
 document.addEventListener('DOMContentLoaded', () => {
     type();
-    
+
     // Reveal on scroll
     const reveals = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
 
     reveals.forEach(reveal => revealObserver.observe(reveal));
-    
+
     // Card Glow Effect
     const cards = document.querySelectorAll('.project-card');
     cards.forEach(card => {
