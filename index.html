@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ursus GBAGUIDI | Data Scientist & Finance Engineer</title>
+    <meta name="description" content="Portfolio de Ursus GBAGUIDI - Data Scientist, ML Engineer et Élève Ingénieur en Modélisation Aléatoire Statistique et Finance. Expert en Statistiques, Machine Learning et Modélisation.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+    <canvas id="particle-canvas"></canvas>
+    
+    <nav class="navbar">
+        <div class="logo">U.GBAGUIDI</div>
+        <ul class="nav-links">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#about">Profil</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <header id="home" class="hero section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="greeting">Bonjour, je suis</span>
+                <h1 class="glitch" data-text="Ursus HornelGBAGUIDI">Ursus GBAGUIDI</h1>
+                <div class="typewriter">
+                    <span id="typed-text"></span><span class="cursor">|</span>
+                </div>
+                <p class="hero-description">Data Scientist & ML Engineer. Élève Ingénieur en Modélisation Aléatoire Statistique et Finance, passionné par l’IA et la modélisation.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Me contacter</a>
+                    <a href="#projects" class="btn btn-secondary">Voir mes projets</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/Ursusghd" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ursus-hornel-gbaguidi-620ba9281" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:ursusghd@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="img-container">
+                    <img src="img/WhatsApp Image 2026-04-03 at 4.12.37 PM.jpeg" alt="Ursus GBAGUIDI" id="profile-img">
+                    <div class="glow-effect"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="about section reveal">
+        <div class="container">
+            <h2 class="section-title">Profil Professionnel</h2>
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="img-container secondary-img">
+                        <img src="img/WhatsApp Image 2026-04-03 at 4.15.47 PM.jpeg" alt="Ursus Gbaguidi" id="about-img">
+                        <div class="glow-effect"></div>
+                    </div>
+                </div>
+                <div class="about-info">
+                    <p>Passionné par les statistiques, l'IA et la finance, je suis <strong>Élève Ingénieur en Modélisation Aléatoire Statistique et Finance</strong>. Au-delà de la technique, je crois fermement que les mathématiques et l'IA sont des leviers d'impact social.</p>
+                    <div class="info-badges">
+                        <div class="badge"><i class="fas fa-rocket"></i> Co-fondateur SNOW</div>
+                        <div class="badge"><i class="fas fa-university"></i> ENSGMM, UNSTIM</div>
+                        <div class="badge"><i class="fas fa-graduation-cap"></i> 5ᵉ année GMM</div>
+                        <div class="badge"><i class="fas fa-location-dot"></i> Abomey, Bénin</div>
+                    </div>
+                </div>
+                <div class="education-timeline">
+                    <h3>Parcours Académique</h3>
+                    <div class="timeline-item">
+                        <span class="year">2023 – 2026</span>
+                        <h4>Génie Mathématique et Modélisation</h4>
+                        <p>Étudiant en 5ᵉ année – ENSGMM, UNSTIM, Abomey</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">2021 – 2023</span>
+                        <h4>Classes préparatoires scientifiques</h4>
+                        <p>INSPEI Abomey</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills section reveal">
+        <div class="container">
+            <h2 class="section-title">Compétences Techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programmation</h3>
+                    <div class="skill-tags">
+                        <span>Python</span><span>C</span><span>R</span><span>MATLAB</span><span>SQL/SQLite</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> Machine Learning</h3>
+                    <div class="skill-tags">
+                        <span>Computer Vision</span><span>Réseaux de Neurones</span><span>Régression</span><span>Classification</span><span>Modèles d’ensemble</span>
+                        <span>Séries temporelles</span><span>Analyse descriptive</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Outils & Dev</h3>
+                    <div class="skill-tags">
+                        <span>UML</span><span>Git/GitHub</span><span>Flask</span><span>Streamlit</span><span>HTML/CSS</span>
+                        <span>Excel</span><span>LaTeX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects section reveal">
+        <div class="container">
+            <h2 class="section-title">Projets & Expériences</h2>
+            <div class="projects-grid">
+                <div class="project-card destaque">
+                    <div class="card-glow"></div>
+                    <div class="project-content">
+                        <span class="tag">IA Médico-Sociale</span>
+                        <h3>ANONTCHIGAN</h3>
+                        <p>Plateforme d'intelligence conversationnelle pour le cancer du sein. Analyse d'images radiographiques et de données tabulaires pour prédire la malignité des tumeurs (Aide à la décision médicale).</p>
+                        <div class="project-footer">
+                            <a href="https://anontchigan.onrender.com/" target="_blank" class="project-link">Visiter le site <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card destaque">
+                    <div class="card-glow"></div>
+                    <div class="project-content">
+                        <span class="tag">Finaliste UNESCO</span>
+                        <h3>SINTCHIGAN (Flood Prediction)</h3>
+                        <p>Projet Water4Future (2026). Système de prédiction des inondations basé sur la modélisation hydrologique avancée.</p>
+                        <div class="project-footer">
+                            <span>#ML #Hydrologie #UNESCO</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="card-glow"></div>
+                    <div class="project-content">
+                        <span class="tag">2ᵉ Place</span>
+                        <h3>Data Tour – Credit Scoring</h3>
+                        <p>Analyse de données financières et modélisation prédictive du risque de crédit au Bénin.</p>
+                        <div class="project-footer">
+                            <span>#Classification #Finance #DataScience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="certs section reveal">
+        <div class="container">
+            <h2 class="section-title">Certifications & Distinctions</h2>
+            <div class="certs-list">
+                <div class="cert-item"><i class="fas fa-certificate"></i><span>Modélisation par Équations Structurelles – LABEF-UAC (2026)</span></div>
+                <div class="cert-item"><i class="fas fa-certificate"></i><span>Intro à l'Intelligence Artificielle – AMA (2026)</span></div>
+                <div class="cert-item"><i class="fas fa-certificate"></i><span>Seed for the Future – Huawei ICT (2025)</span></div>
+                <div class="cert-item"><i class="fas fa-certificate"></i><span>TITA Digital Skills (2024)</span></div>
+                <div class="cert-item"><i class="fas fa-certificate"></i><span>Calcul Haute Performance – CEA (2024)</span></div>
+                <div class="cert-item"><i class="fas fa-code"></i><span>Learn2Code – EtriLabs (2022)</span></div>
+                <div class="cert-item"><i class="fas fa-certificate"></i><span>GéNEB (Entrepreneuriat)</span></div>
+                <div class="cert-item"><i class="fas fa-bolt"></i><span>Président – Club IA ENSGMM</span></div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="contact reveal">
+        <div class="container">
+            <h2 class="section-title">Prenons Contact</h2>
+            <div class="contact-methods">
+                <a href="mailto:ursusghd@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>ursusghd@gmail.com</span>
+                </a>
+                <a href="https://wa.me/2290166245656" target="_blank" class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>+229 01 66 24 56 56</span>
+                </a>
+                <div class="contact-item">
+                    <i class="fas fa-location-dot"></i>
+                    <span>Abomey, Bénin</span>
+                </div>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/Ursusghd" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/ursus-hornel-gbaguidi-620ba9281" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="copyright">&copy; 2026 Ursus GBAGUIDI. Certifié exact et vérifiable.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
