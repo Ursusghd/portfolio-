@@ -1,205 +1,807 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ursus GBAGUIDI | Data Scientist & Finance Engineer</title>
-    <meta name="description" content="Portfolio de Ursus GBAGUIDI - Data Scientist, ML Engineer et Élève Ingénieur en Modélisation Aléatoire Statistique et Finance. Expert en Statistiques, Machine Learning et Modélisation.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ursus GBAGUIDI | Data Scientist &amp; ML Engineer</title>
+<meta name="description" content="Ursus Hornel GBAGUIDI, Data Scientist &amp; ML Engineer, ingénieur en Génie Mathématique et Modélisation. Triple champion : Hackathon MTN Yello'Care, compétition nationale CIF et UNESCO Water4Future.">
+<meta name="theme-color" content="#0C0A09">
+
+<meta property="og:title" content="Ursus GBAGUIDI | Data Scientist &amp; ML Engineer">
+<meta property="og:description" content="IA, modélisation stochastique et finance au service de l'impact social.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-theme">
-    <canvas id="particle-canvas"></canvas>
-    
-    <nav class="navbar">
-        <div class="logo">U.GBAGUIDI</div>
-        <ul class="nav-links">
-            <li><a href="#home">Accueil</a></li>
-            <li><a href="#about">Profil</a></li>
-            <li><a href="#skills">Compétences</a></li>
-            <li><a href="#projects">Projets</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#contact">Contact</a></li>
+<body>
+
+<!-- ═══ PRELOADER ═══ -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-mark" aria-hidden="true">
+      <svg viewBox="0 0 100 100" width="76" height="76">
+        <circle class="pl-ring" cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle class="pl-ring-2" cx="50" cy="50" r="28" fill="none" stroke="currentColor" stroke-width="1"/>
+        <text x="50" y="58" text-anchor="middle" class="pl-letter">U</text>
+      </svg>
+    </div>
+    <div class="preloader-bar"><span id="preloader-fill"></span></div>
+    <div class="preloader-pct"><span id="preloader-pct">0</span>%</div>
+  </div>
+</div>
+
+<div class="curtain" id="curtain" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+<div class="aurora" aria-hidden="true"></div>
+<div class="spotlight" id="spotlight" aria-hidden="true"></div>
+
+<!-- ═══ AMBIENT LAYERS ═══ -->
+<div class="mesh-bg" aria-hidden="true">
+  <span class="mesh-blob b1"></span>
+  <span class="mesh-blob b2"></span>
+  <span class="mesh-blob b3"></span>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<canvas id="neural-canvas" aria-hidden="true"></canvas>
+
+<!-- ═══ CURSOR ═══ -->
+<div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+<!-- ═══ SCROLL PROGRESS ═══ -->
+<div class="scroll-progress" aria-hidden="true"><span id="scroll-bar"></span></div>
+
+<!-- ═══ NAV ═══ -->
+<header class="nav" id="nav">
+  <a href="#home" class="nav-logo" data-magnetic>
+    <span class="logo-glyph">U</span>
+    <span class="logo-text">GBAGUIDI</span>
+  </a>
+  <nav class="nav-links" id="nav-links" aria-label="Navigation principale">
+    <a href="#home" class="nav-link active">Accueil</a>
+    <a href="#awards" class="nav-link">Distinctions</a>
+    <a href="#about" class="nav-link">Profil</a>
+    <a href="#skills" class="nav-link">Compétences</a>
+    <a href="#snow" class="nav-link">Entreprise</a>
+    <a href="#projects" class="nav-link">Projets</a>
+    <a href="#certs" class="nav-link">Certifications</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+  <a href="#contact" class="nav-cta" data-magnetic>Travaillons ensemble</a>
+  <button class="nav-burger" id="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="home">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow reveal" data-delay="0">
+        <span class="pulse-dot"></span> Disponible pour collaborations &amp; stages
+      </p>
+
+      <h1 class="hero-title reveal" data-delay="60">
+        <span class="line"><span class="word" data-split>Ursus</span></span>
+        <span class="line"><span class="word glitch" data-text="GBAGUIDI">GBAGUIDI</span></span>
+      </h1>
+
+      <div class="hero-role reveal" data-delay="120">
+        <span class="role-prefix">&gt;</span>
+        <span id="typed"></span><span class="caret">_</span>
+      </div>
+
+      <p class="hero-desc reveal" data-delay="180">
+        Je transforme des données brutes en décisions qui comptent : santé, finance,
+        climat. Ingénieur en Génie Mathématique et Modélisation, je conçois des
+        modèles d'IA robustes <strong>même sous contrainte de ressources</strong>.
+      </p>
+
+      <div class="hero-actions reveal" data-delay="240">
+        <a href="#projects" class="btn btn-gold" data-magnetic>
+          Voir mes projets
+          <svg viewBox="0 0 24 24" class="ico"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost" data-magnetic>Me contacter</a>
+      </div>
+
+      <div class="hero-stats reveal" data-delay="300">
+        <div class="stat"><b data-count="3">0</b><span>Titres de champion</span></div>
+        <div class="stat"><b data-count="11">0</b><span>Certifications</span></div>
+        <div class="stat"><b data-count="5">0</b><span>Années de modélisation</span></div>
+        <div class="stat"><b data-count="1">0</b><span>Entreprise co-fondée</span></div>
+      </div>
+
+      <div class="hero-social reveal" data-delay="360">
+        <a href="https://github.com/Ursusghd" target="_blank" rel="noopener" aria-label="GitHub" data-magnetic>
+          <svg viewBox="0 0 24 24" class="ico-fill"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.12 3.06.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/ursus-hornel-gbaguidi-620ba9281" target="_blank" rel="noopener" aria-label="LinkedIn" data-magnetic>
+          <svg viewBox="0 0 24 24" class="ico-fill"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="mailto:ursusghd@gmail.com" aria-label="Email" data-magnetic>
+          <svg viewBox="0 0 24 24" class="ico"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" data-delay="200">
+      <div class="portrait" data-tilt>
+        <div class="portrait-frame">
+          <img src="img/WhatsApp Image 2026-04-03 at 4.12.37 PM.jpeg" alt="Portrait d'Ursus GBAGUIDI" loading="eager">
+          <div class="portrait-scan"></div>
+          <div class="portrait-grid"></div>
+        </div>
+        <div class="float-chip chip-1">
+          <svg viewBox="0 0 24 24" class="ico"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+          <span>Python · PyTorch</span>
+        </div>
+        <div class="float-chip chip-2">
+          <svg viewBox="0 0 24 24" class="ico"><path d="M3 17l6-6 4 4 8-8"/></svg>
+          <span>Modélisation stochastique</span>
+        </div>
+        <div class="float-chip chip-3">
+          <svg viewBox="0 0 24 24" class="ico"><path d="m12 2 3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.2 3.3L7 14.3l-5-4.9 7-.9z"/></svg>
+          <span>3× Champion</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#awards" class="scroll-hint" aria-label="Descendre">
+    <span class="mouse"><span class="wheel"></span></span>
+    <span class="scroll-label">Scroll</span>
+  </a>
+</section>
+
+<!-- ═══ MARQUEE ═══ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Machine Learning</span><i>◆</i><span>Computer Vision</span><i>◆</i><span>Séries temporelles</span><i>◆</i>
+    <span>Credit Scoring</span><i>◆</i><span>LBC/FT/FP</span><i>◆</i><span>Modélisation hydrologique</span><i>◆</i>
+    <span>Deep Learning</span><i>◆</i><span>Calcul haute performance</span><i>◆</i>
+    <span>Machine Learning</span><i>◆</i><span>Computer Vision</span><i>◆</i><span>Séries temporelles</span><i>◆</i>
+    <span>Credit Scoring</span><i>◆</i><span>LBC/FT/FP</span><i>◆</i><span>Modélisation hydrologique</span><i>◆</i>
+    <span>Deep Learning</span><i>◆</i><span>Calcul haute performance</span><i>◆</i>
+  </div>
+</div>
+
+<!-- ═══ AWARDS ═══ -->
+<section class="section awards" id="awards">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">01</span>
+      <h2 class="section-title" data-split>Distinctions majeures</h2>
+      <p class="section-sub">Trois titres de champion remportés en compétition, sur des sujets à fort enjeu : santé, conformité financière et résilience climatique.</p>
+    </div>
+
+    <div class="awards-grid">
+
+      <article class="award-card featured reveal" data-tilt data-delay="0">
+        <div class="award-shine"></div>
+        <div class="award-badge">
+          <svg viewBox="0 0 24 24" class="ico"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>
+          <span>Champion</span>
+        </div>
+        <div class="award-org">MTN Yello'Care</div>
+        <h3 class="award-title">Vainqueur du Hackathon MTN&nbsp;Yello'Care</h3>
+        <p class="award-text">
+          Avec mon équipe, nous avons remporté le hackathon organisé par MTN dans le cadre
+          du programme Yello'Care. Notre solution&nbsp;: <strong>TOGBE</strong>, un système de
+          gestion des plaintes et suggestions destiné aux hôpitaux, pour que la voix du
+          patient devienne une donnée exploitable par les équipes de santé.
+        </p>
+        <ul class="award-points">
+          <li>Collecte structurée des plaintes et suggestions patients</li>
+          <li>Routage et suivi du traitement par service hospitalier</li>
+          <li>Tableau de bord d'analyse pour la direction</li>
         </ul>
-        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-    </nav>
-
-    <header id="home" class="hero section">
-        <div class="hero-content">
-            <div class="hero-text">
-                <span class="greeting">Bonjour, je suis</span>
-                <h1 class="glitch" data-text="Ursus HornelGBAGUIDI">Ursus GBAGUIDI</h1>
-                <div class="typewriter">
-                    <span id="typed-text"></span><span class="cursor">|</span>
-                </div>
-                <p class="hero-description">Data Scientist & ML Engineer. Élève Ingénieur en Modélisation Aléatoire Statistique et Finance, passionné par l’IA et la modélisation.</p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">Me contacter</a>
-                    <a href="#projects" class="btn btn-secondary">Voir mes projets</a>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/Ursusghd" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/ursus-hornel-gbaguidi-620ba9281" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:ursusghd@gmail.com"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="img-container">
-                    <img src="img/WhatsApp Image 2026-04-03 at 4.12.37 PM.jpeg" alt="Ursus GBAGUIDI" id="profile-img">
-                    <div class="glow-effect"></div>
-                </div>
-            </div>
+        <div class="award-foot">
+          <a href="https://togbe.vercel.app/" target="_blank" rel="noopener" class="btn btn-gold sm" data-magnetic>
+            Découvrir TOGBE
+            <svg viewBox="0 0 24 24" class="ico"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+          <div class="award-tags"><span>Équipe championne</span><span>HealthTech</span><span>Impact social</span></div>
         </div>
-    </header>
+      </article>
 
-    <section id="about" class="about section reveal">
-        <div class="container">
-            <h2 class="section-title">Profil Professionnel</h2>
-            <div class="about-grid">
-                <div class="about-image">
-                    <div class="img-container secondary-img">
-                        <img src="img/WhatsApp Image 2026-04-03 at 4.15.47 PM.jpeg" alt="Ursus Gbaguidi" id="about-img">
-                        <div class="glow-effect"></div>
-                    </div>
-                </div>
-                <div class="about-info">
-                    <p>Passionné par les statistiques, l'IA et la finance, je suis <strong>Élève Ingénieur en Modélisation Aléatoire Statistique et Finance</strong>. Au-delà de la technique, je crois fermement que les mathématiques et l'IA sont des leviers d'impact social.</p>
-                    <div class="info-badges">
-                        <div class="badge"><i class="fas fa-rocket"></i> Co-fondateur SNOW</div>
-                        <div class="badge"><i class="fas fa-university"></i> ENSGMM, UNSTIM</div>
-                        <div class="badge"><i class="fas fa-graduation-cap"></i> 5ᵉ année GMM</div>
-                        <div class="badge"><i class="fas fa-location-dot"></i> Abomey, Bénin</div>
-                    </div>
-                </div>
-                <div class="education-timeline">
-                    <h3>Parcours Académique</h3>
-                    <div class="timeline-item">
-                        <span class="year">2023 – 2026</span>
-                        <h4>Génie Mathématique et Modélisation</h4>
-                        <p>Étudiant en 5ᵉ année – ENSGMM, UNSTIM, Abomey</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="year">2021 – 2023</span>
-                        <h4>Classes préparatoires scientifiques</h4>
-                        <p>INSPEI Abomey</p>
-                    </div>
-                </div>
-            </div>
+      <article class="award-card featured reveal" data-tilt data-delay="100">
+        <div class="award-shine"></div>
+        <div class="award-badge alt">
+          <svg viewBox="0 0 24 24" class="ico"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>Champion national</span>
         </div>
-    </section>
-
-    <section id="skills" class="skills section reveal">
-        <div class="container">
-            <h2 class="section-title">Compétences Techniques</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Programmation</h3>
-                    <div class="skill-tags">
-                        <span>Python</span><span>C</span><span>R</span><span>MATLAB</span><span>SQL/SQLite</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-brain"></i> Machine Learning</h3>
-                    <div class="skill-tags">
-                        <span>Computer Vision</span><span>Réseaux de Neurones</span><span>Régression</span><span>Classification</span><span>Modèles d’ensemble</span>
-                        <span>Séries temporelles</span><span>Analyse descriptive</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> Outils & Dev</h3>
-                    <div class="skill-tags">
-                        <span>UML</span><span>Git/GitHub</span><span>Flask</span><span>Streamlit</span><span>HTML/CSS</span>
-                        <span>Excel</span><span>LaTeX</span>
-                    </div>
-                </div>
-            </div>
+        <div class="award-org">CIF</div>
+        <h3 class="award-title">Champion national, compétition CIF</h3>
+        <p class="award-text">
+          Titre de champion national remporté sur un sujet de conformité financière&nbsp;:
+          le <strong>filtrage des clients</strong> et la lutte contre le blanchiment de
+          capitaux, le financement du terrorisme et de la prolifération
+          <strong>(LBC/FT/FP)</strong>.
+        </p>
+        <ul class="award-points">
+          <li>Détection d'opérations suspectes sur données transactionnelles</li>
+          <li>Screening client &amp; rapprochement sur listes de sanctions</li>
+          <li>Architecture frugale : performance sous ressources informatiques restreintes</li>
+        </ul>
+        <div class="award-foot">
+          <div class="award-tags"><span>RegTech</span><span>LBC/FT/FP</span><span>Anomaly detection</span><span>Frugal ML</span></div>
         </div>
-    </section>
+      </article>
 
-    <section id="projects" class="projects section reveal">
-        <div class="container">
-            <h2 class="section-title">Projets & Expériences</h2>
-            <div class="projects-grid">
-                <div class="project-card destaque">
-                    <div class="card-glow"></div>
-                    <div class="project-content">
-                        <span class="tag">IA Médico-Sociale</span>
-                        <h3>ANONTCHIGAN</h3>
-                        <p>Plateforme d'intelligence conversationnelle pour le cancer du sein. Analyse d'images radiographiques et de données tabulaires pour prédire la malignité des tumeurs (Aide à la décision médicale).</p>
-                        <div class="project-footer">
-                            <a href="https://anontchigan.onrender.com/" target="_blank" class="project-link">Visiter le site <i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card destaque">
-                    <div class="card-glow"></div>
-                    <div class="project-content">
-                        <span class="tag">Finaliste UNESCO</span>
-                        <h3>SINTCHIGAN (Flood Prediction)</h3>
-                        <p>Projet Water4Future (2026). Système de prédiction des inondations basé sur la modélisation hydrologique avancée.</p>
-                        <div class="project-footer">
-                            <span>#ML #Hydrologie #UNESCO</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="card-glow"></div>
-                    <div class="project-content">
-                        <span class="tag">2ᵉ Place</span>
-                        <h3>Data Tour – Credit Scoring</h3>
-                        <p>Analyse de données financières et modélisation prédictive du risque de crédit au Bénin.</p>
-                        <div class="project-footer">
-                            <span>#Classification #Finance #DataScience</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <article class="award-card featured reveal" data-tilt data-delay="160">
+        <div class="award-shine"></div>
+        <div class="award-badge aqua">
+          <svg viewBox="0 0 24 24" class="ico"><path d="M12 2.5s6 6.8 6 11a6 6 0 0 1-12 0c0-4.2 6-11 6-11z"/></svg>
+          <span>Champion</span>
         </div>
-    </section>
+        <div class="award-org">UNESCO ICIREWARD · Montpellier</div>
+        <h3 class="award-title">Gold Prize du Hackathon Water4Future</h3>
+        <p class="award-text">
+          Notre projet <strong>Eauracle</strong> a reçu le <strong>Gold Prize</strong> du jury
+          du Water4Future Students Hackathon, compétition internationale organisée par le
+          Centre UNESCO ICIREWARD à l'Hôtel de ville de Montpellier.
+        </p>
+        <ul class="award-points">
+          <li>+800 étudiants, 70 universités et écoles d'ingénieurs, 22 pays</li>
+          <li>Enjeux de ressource en eau et de résilience climatique</li>
+          <li>Équipe de 6, ENSGMM Bénin · 26 et 27 février 2026</li>
+        </ul>
+        <div class="award-foot"><div class="award-tags"><span>Gold Prize</span><span>International</span><span>UNESCO</span><span>Eau &amp; climat</span></div></div>
+      </article>
 
-    <section id="certifications" class="certs section reveal">
-        <div class="container">
-            <h2 class="section-title">Certifications & Distinctions</h2>
-            <div class="certs-list">
-                <div class="cert-item"><i class="fas fa-certificate"></i><span>Modélisation par Équations Structurelles – LABEF-UAC (2026)</span></div>
-                <div class="cert-item"><i class="fas fa-certificate"></i><span>Intro à l'Intelligence Artificielle – AMA (2026)</span></div>
-                <div class="cert-item"><i class="fas fa-certificate"></i><span>Seed for the Future – Huawei ICT (2025)</span></div>
-                <div class="cert-item"><i class="fas fa-certificate"></i><span>TITA Digital Skills (2024)</span></div>
-                <div class="cert-item"><i class="fas fa-certificate"></i><span>Calcul Haute Performance – CEA (2024)</span></div>
-                <div class="cert-item"><i class="fas fa-code"></i><span>Learn2Code – EtriLabs (2022)</span></div>
-                <div class="cert-item"><i class="fas fa-certificate"></i><span>GéNEB (Entrepreneuriat)</span></div>
-            </div>
+      <article class="award-card reveal" data-tilt data-delay="220">
+        <div class="award-shine"></div>
+        <div class="award-badge ghost">
+          <svg viewBox="0 0 24 24" class="ico"><path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/><path d="M8.2 13.9 6.5 21 12 18l5.5 3-1.7-7.1"/></svg>
+          <span>2ᵉ place</span>
         </div>
-    </section>
+        <div class="award-org">Data Tour Bénin</div>
+        <h3 class="award-title">Vice-champion en Credit Scoring</h3>
+        <p class="award-text">Modélisation prédictive du risque de crédit sur données financières béninoises.</p>
+        <div class="award-foot"><div class="award-tags"><span>Finance</span><span>Classification</span></div></div>
+      </article>
 
-    <footer id="contact" class="contact reveal">
-        <div class="container">
-            <h2 class="section-title">Prenons Contact</h2>
-            <div class="contact-methods">
-                <a href="mailto:ursusghd@gmail.com" class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>ursusghd@gmail.com</span>
-                </a>
-                <a href="https://wa.me/2290166245656" target="_blank" class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>+229 01 66 24 56 56</span>
-                </a>
-                <div class="contact-item">
-                    <i class="fas fa-location-dot"></i>
-                    <span>Abomey, Bénin</span>
-                </div>
-            </div>
-            <div class="footer-social">
-                <a href="https://github.com/Ursusghd" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/ursus-hornel-gbaguidi-620ba9281" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
-            <p class="copyright">&copy; 2026 Ursus GBAGUIDI. Certifié exact et vérifiable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">02</span>
+      <h2 class="section-title" data-split>Profil</h2>
+      <p class="section-sub">Mathématiques appliquées, IA et finance, avec l'impact social comme boussole.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-visual reveal" data-tilt>
+        <div class="portrait-frame small">
+          <img src="img/WhatsApp Image 2026-04-03 at 4.15.47 PM.jpeg" alt="Ursus GBAGUIDI en conférence" loading="lazy">
+          <div class="portrait-grid"></div>
         </div>
-    </footer>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="about-body reveal" data-delay="80">
+        <p class="lead">
+          Passionné par les statistiques, l'intelligence artificielle et la finance, je suis
+          <strong>ingénieur en Génie Mathématique et Modélisation</strong> à l'ENSGMM
+          (UNSTIM, Abomey). Au-delà de la technique, je crois fermement que les mathématiques
+          et l'IA sont des leviers d'impact social.
+        </p>
+        <p>
+          Mon fil rouge&nbsp;: construire des modèles qui tiennent la route dans le contexte
+          réel africain : données imparfaites, infrastructures limitées, enjeux critiques.
+          C'est exactement ce qui m'a conduit aux titres remportés en santé numérique et en
+          conformité financière.
+        </p>
+        <div class="badges">
+          <a class="badge link" href="https://snow-agency.online/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" class="ico"><path d="M4.5 16.5 3 21l4.5-1.5M14 4l6 6M9 15l-4-4 9-9 4 4-9 9z"/></svg> Co-fondateur SNOW</a>
+          <span class="badge"><svg viewBox="0 0 24 24" class="ico"><path d="M3 21h18M5 21V10l7-5 7 5v11M10 21v-6h4v6"/></svg> ENSGMM · UNSTIM</span>
+          <span class="badge"><svg viewBox="0 0 24 24" class="ico"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg> 5ᵉ année GMM</span>
+          <span class="badge"><svg viewBox="0 0 24 24" class="ico"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Abomey, Bénin</span>
+        </div>
+      </div>
+
+      <div class="timeline reveal" data-delay="140">
+        <h3 class="timeline-head">Parcours</h3>
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <span class="tl-year">2023 à 2026</span>
+          <h4>Génie Mathématique et Modélisation</h4>
+          <p>5ᵉ année, ENSGMM, UNSTIM Abomey</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <span class="tl-year">Juil. 2026</span>
+          <h4>École CIMPA, chaire UNESCO ICMPA</h4>
+          <p>Topological and Extremal Properties of Combinatorial Structures, Abomey-Calavi</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <span class="tl-year">Depuis 2022</span>
+          <h4>Co-fondateur de SNOW (Solution Now)</h4>
+          <p>Écosystème digital, branding &amp; influence · Cotonou</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <span class="tl-year">2021 à 2023</span>
+          <h4>Classes préparatoires scientifiques</h4>
+          <p>INSPEI, Abomey</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SKILLS ═══ -->
+<section class="section skills" id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">03</span>
+      <h2 class="section-title" data-split>Compétences</h2>
+      <p class="section-sub">De la théorie probabiliste au déploiement, en passant par le calcul parallèle.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal" data-tilt data-delay="0">
+        <div class="skill-ico">
+          <svg viewBox="0 0 24 24" class="ico"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+        </div>
+        <h3>Programmation</h3>
+        <div class="tags">
+          <span>Python</span><span>C</span><span>R</span><span>MATLAB</span><span>SQL / SQLite</span><span>Bash / Linux</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal" data-tilt data-delay="80">
+        <div class="skill-ico">
+          <svg viewBox="0 0 24 24" class="ico"><path d="M12 5a3 3 0 0 0-3 3 3 3 0 0 0-1 5.8A3 3 0 0 0 12 19a3 3 0 0 0 4-5.2A3 3 0 0 0 15 8a3 3 0 0 0-3-3z"/><path d="M12 5v14"/></svg>
+        </div>
+        <h3>Machine Learning</h3>
+        <div class="tags">
+          <span>Computer Vision</span><span>Réseaux de neurones</span><span>Régression</span><span>Classification</span>
+          <span>Modèles d'ensemble</span><span>Séries temporelles</span><span>Détection d'anomalies</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal" data-tilt data-delay="160">
+        <div class="skill-ico">
+          <svg viewBox="0 0 24 24" class="ico"><path d="M3 3v18h18"/><path d="m7 15 4-5 3 3 5-7"/></svg>
+        </div>
+        <h3>Statistiques &amp; Finance</h3>
+        <div class="tags">
+          <span>Modélisation aléatoire</span><span>Équations structurelles</span><span>Credit scoring</span>
+          <span>Conformité LBC/FT/FP</span><span>Analyse de risque</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal" data-tilt data-delay="240">
+        <div class="skill-ico">
+          <svg viewBox="0 0 24 24" class="ico"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18"/></svg>
+        </div>
+        <h3>Outils &amp; Déploiement</h3>
+        <div class="tags">
+          <span>Git / GitHub</span><span>Flask</span><span>Streamlit</span><span>HTML / CSS</span>
+          <span>UML</span><span>LaTeX</span><span>SLURM / HPC</span><span>Excel</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="meters reveal">
+      <div class="meter"><div class="meter-top"><span>Data Science &amp; ML</span><b>95%</b></div><div class="meter-bar"><i data-fill="95"></i></div></div>
+      <div class="meter"><div class="meter-top"><span>Modélisation mathématique</span><b>92%</b></div><div class="meter-bar"><i data-fill="92"></i></div></div>
+      <div class="meter"><div class="meter-top"><span>Finance quantitative &amp; conformité</span><b>85%</b></div><div class="meter-bar"><i data-fill="85"></i></div></div>
+      <div class="meter"><div class="meter-top"><span>Développement &amp; déploiement</span><b>80%</b></div><div class="meter-bar"><i data-fill="80"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VENTURE : SNOW ═══ -->
+<section class="section venture" id="snow">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">04</span>
+      <h2 class="section-title" data-split>Mon entreprise</h2>
+      <p class="section-sub">Au-delà de la recherche et des compétitions, je construis une structure qui fait émerger les talents africains.</p>
+    </div>
+
+    <div class="venture-card reveal">
+      <div class="venture-shine"></div>
+      <div class="venture-head">
+        <div class="venture-id">
+          <span class="venture-mark">SNOW</span>
+          <div>
+            <h3 class="venture-name">SNOW, Solution Now</h3>
+            <p class="venture-role">Co-fondateur · Cotonou, Bénin</p>
+          </div>
+        </div>
+        <a href="https://snow-agency.online/" target="_blank" rel="noopener" class="btn btn-gold sm" data-magnetic>
+          snow-agency.online
+          <svg viewBox="0 0 24 24" class="ico"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+
+      <p class="venture-pitch">
+        Un écosystème panafricain qui réunit <strong>digital, branding et influence</strong>
+        pour propulser les talents et les marques africaines vers l'excellence.
+        <em>« Solution Now, pas demain. »</em>
+      </p>
+
+      <div class="poles">
+        <div class="pole">
+          <div class="pole-ico"><svg viewBox="0 0 24 24" class="ico"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></div>
+          <h4>SNOW Digital</h4>
+          <p>Développement web, intelligence artificielle, automatisation.</p>
+        </div>
+        <div class="pole">
+          <div class="pole-ico"><svg viewBox="0 0 24 24" class="ico"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="19" cy="13" r="2.5"/><circle cx="6" cy="12" r="3"/><path d="M12 22a9 9 0 1 1 9-9c0 2-1.5 2.5-3 2.5h-2a2 2 0 0 0-1 3.7c.4.8 0 1.8-3 1.8z"/></svg></div>
+          <h4>SNOW Branding</h4>
+          <p>Identité visuelle, stratégie de marque, design UI/UX.</p>
+        </div>
+        <div class="pole">
+          <div class="pole-ico"><svg viewBox="0 0 24 24" class="ico"><path d="m3 11 18-8-8 18-2-8z"/></svg></div>
+          <h4>SNOW Influence</h4>
+          <p>Réseaux sociaux, production vidéo, marketing d'influence.</p>
+        </div>
+      </div>
+
+      <div class="flagship">
+        <div class="flagship-tag">
+          <span class="live-dot"></span> Projet phare en construction
+        </div>
+        <h3 class="flagship-name">SNOW VIEW</h3>
+        <p class="flagship-desc">
+          Le produit sur lequel je travaille actuellement : un
+          <strong>réseau social qui rémunère ses créateurs</strong> via les
+          <strong>Snowcoins</strong>, une monnaie interne pensée pour que l'audience
+          africaine génère enfin de la valeur pour celles et ceux qui la créent.
+        </p>
+        <div class="flagship-foot">
+          <a href="https://snowview.online" target="_blank" rel="noopener" class="btn btn-gold" data-magnetic>
+            Découvrir SNOW VIEW
+            <svg viewBox="0 0 24 24" class="ico"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+          <div class="proj-stack">
+            <span>Creator economy</span><span>Snowcoins</span><span>Produit en cours</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="venture-also">
+        Également développé en interne : <strong>Nexus Hub</strong>, plateforme SaaS
+        d'outils pour entrepreneurs africains.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJECTS ═══ -->
+<section class="section projects" id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">05</span>
+      <h2 class="section-title" data-split>Projets</h2>
+      <p class="section-sub">Des systèmes conçus pour être utilisés, pas seulement démontrés.</p>
+    </div>
+
+    <div class="proj-grid">
+
+      <article class="proj-card wide reveal" data-tilt>
+        <div class="proj-glow"></div>
+        <div class="proj-meta"><span class="dot gold"></span> Hackathon MTN Yello'Care · Projet gagnant</div>
+        <h3 class="proj-title">TOGBE</h3>
+        <p class="proj-desc">
+          Système de gestion des plaintes et suggestions pour les hôpitaux. Les patients
+          signalent, les services traitent, la direction mesure. Conçu et livré pendant le
+          hackathon MTN Yello'Care, où notre équipe a été sacrée championne.
+        </p>
+        <div class="proj-stack"><span>Web App</span><span>HealthTech</span><span>Dashboard</span><span>Vercel</span></div>
+        <a href="https://togbe.vercel.app/" target="_blank" rel="noopener" class="proj-link" data-magnetic>
+          togbe.vercel.app
+          <svg viewBox="0 0 24 24" class="ico"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </a>
+      </article>
+
+      <article class="proj-card reveal" data-tilt data-delay="180">
+        <div class="proj-glow"></div>
+        <div class="proj-meta"><span class="dot"></span> IA médico-sociale</div>
+        <h3 class="proj-title">ANONTCHIGAN</h3>
+        <p class="proj-desc">
+          Plateforme d'intelligence conversationnelle dédiée au cancer du sein. Analyse
+          d'images radiographiques et de données tabulaires pour estimer la malignité
+          des tumeurs, en appui à la décision médicale.
+        </p>
+        <div class="proj-stack"><span>Computer Vision</span><span>NLP</span><span>Santé</span></div>
+        <a href="https://anontchigan.onrender.com/" target="_blank" rel="noopener" class="proj-link" data-magnetic>
+          Visiter le site
+          <svg viewBox="0 0 24 24" class="ico"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </a>
+      </article>
+
+      <article class="proj-card reveal" data-tilt data-delay="140">
+        <div class="proj-glow"></div>
+        <div class="proj-meta"><span class="dot"></span> Compétition CIF · Projet champion</div>
+        <h3 class="proj-title">Screening &amp; conformité LBC/FT/FP</h3>
+        <p class="proj-desc">
+          Outils de filtrage client et de détection d'opérations suspectes pour la lutte
+          contre le blanchiment de capitaux et le financement du terrorisme, pensés pour
+          fonctionner avec des ressources informatiques restreintes.
+        </p>
+        <div class="proj-stack"><span>RegTech</span><span>Anomaly detection</span><span>Frugal ML</span></div>
+      </article>
+
+      <article class="proj-card reveal" data-tilt data-delay="200">
+        <div class="proj-glow"></div>
+        <div class="proj-meta"><span class="dot gold"></span> Water4Future · Gold Prize</div>
+        <h3 class="proj-title">Eauracle</h3>
+        <p class="proj-desc">
+          Projet lauréat du <strong>Gold Prize</strong> au Hackathon Water4Future de
+          Montpellier, face à plus de 800 étudiants venus de 22 pays. Une réponse
+          data-driven aux enjeux de gestion de la ressource en eau.
+        </p>
+        <div class="proj-stack"><span>Eau &amp; climat</span><span>Data</span><span>UNESCO ICIREWARD</span></div>
+      </article>
+
+      <article class="proj-card reveal" data-tilt data-delay="290">
+        <div class="proj-glow"></div>
+        <div class="proj-meta"><span class="dot"></span> Modélisation hydrologique</div>
+        <h3 class="proj-title">SINTCHIGAN</h3>
+        <p class="proj-desc">
+          Système de prédiction des inondations fondé sur la modélisation hydrologique
+          avancée, pour anticiper les crues et protéger les populations exposées.
+        </p>
+        <div class="proj-stack"><span>Hydrologie</span><span>Séries temporelles</span><span>Alerte précoce</span></div>
+      </article>
+
+      <article class="proj-card reveal" data-tilt data-delay="260">
+        <div class="proj-glow"></div>
+        <div class="proj-meta"><span class="dot"></span> Data Tour · 2ᵉ place</div>
+        <h3 class="proj-title">Credit Scoring Bénin</h3>
+        <p class="proj-desc">
+          Analyse de données financières et modélisation prédictive du risque de crédit,
+          avec un travail poussé sur le déséquilibre des classes et l'interprétabilité.
+        </p>
+        <div class="proj-stack"><span>Classification</span><span>Finance</span><span>Feature engineering</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CERTIFICATIONS ═══ -->
+<section class="section certs" id="certs">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-num">06</span>
+      <h2 class="section-title" data-split>Certifications</h2>
+      <p class="section-sub">Cliquez sur une carte pour afficher le document original.</p>
+    </div>
+
+    <div class="cert-filters reveal" role="tablist" aria-label="Filtrer les certifications">
+      <button class="filter active" data-filter="all" role="tab" aria-selected="true">Tout</button>
+      <button class="filter" data-filter="ia" role="tab" aria-selected="false">IA &amp; Data</button>
+      <button class="filter" data-filter="math" role="tab" aria-selected="false">Mathématiques</button>
+      <button class="filter" data-filter="dev" role="tab" aria-selected="false">Dev &amp; Digital</button>
+      <button class="filter" data-filter="entre" role="tab" aria-selected="false">Entrepreneuriat</button>
+    </div>
+
+    <div class="cert-grid" id="cert-grid">
+
+      <button class="cert-card reveal" data-cat="ia" data-src="assets/certs/water4future-gold-2026.jpeg"
+              data-title="Gold Prize, W4F Students Hackathon 2026" data-issuer="UNESCO ICIREWARD · Montpellier" data-date="27 février 2026">
+        <div class="cert-thumb"><img src="assets/certs/water4future-gold-2026.jpeg" alt="Gold Prize du Hackathon Water4Future 2026 décerné au projet Eauracle" loading="lazy"></div>
+        <div class="cert-info">
+          <span class="cert-org">UNESCO ICIREWARD</span>
+          <h3>Gold Prize Water4Future</h3>
+          <p>Prix du jury décerné au projet Eauracle · Montpellier, février 2026</p>
+        </div>
+        <span class="cert-zoom"><svg viewBox="0 0 24 24" class="ico"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span>
+      </button>
+
+      <button class="cert-card reveal" data-cat="ia" data-src="assets/certs/water4future-participation-2026.png" data-pdf="assets/certs/water4future-participation-2026.pdf"
+              data-title="Water4Future Hackathon Étudiants" data-issuer="Centre International UNESCO ICIREWARD" data-date="26 et 27 février 2026">
+        <div class="cert-thumb"><img src="assets/certs/water4future-participation-2026.png" alt="Attestation de participation au Water4Future Hackathon Étudiants 2026" loading="lazy"></div>
+        <div class="cert-info">
+          <span class="cert-org">UNESCO ICIREWARD</span>
+          <h3>Water4Future Hackathon Étudiants</h3>
+          <p>+800 étudiants · 70 écoles · 22 pays · Hôtel de ville de Montpellier</p>
+        </div>
+        <span class="cert-zoom"><svg viewBox="0 0 24 24" class="ico"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span>
+      </button>
+
+      <button class="cert-card reveal" data-cat="ia" data-src="assets/certs/ama-piia-2026.jpeg"
+              data-title="Programme d'Initiation à l'Intelligence Artificielle (PIIA)" data-issuer="Académie des Mathématiques Appliquées (AMA)" data-date="14 février 2026">
+        <div class="cert-thumb"><img src="assets/certs/ama-piia-2026.jpeg" alt="Attestation AMA, Programme d'Initiation à l'Intelligence Artificielle, 2026" loading="lazy"></div>
+        <div class="cert-info">
+          <span class="cert-org">Académie des Mathématiques Appliquées</span>
+          <h3>Initiation à l'IA (PIIA)</h3>
+          <p>Première cohorte · 3 mois de formation, bootcamp full-time et Demo Days · Cotonou, février 2026</p>
+        </div>
+        <span class="cert-zoom"><svg viewBox="0 0 24 24" class="ico"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span>
+      </button>
+
+      <button class="cert-card reveal" data-cat="math" data-src="assets/certs/labef-sem-2025.png" data-pdf="assets/certs/labef-sem-2025.pdf"
+              data-title="Modélisation par les équations structurelles" data-issuer="LABEF · FSA · Université d'Abomey-Calavi, projet SSACAB II" data-date="17 au 19 décembre 2025">
+        <div class="cert-thumb"><img src="assets/certs/labef-sem-2025.png" alt="Attestation LABEF, modélisation par les équations structurelles, 2025" loading="lazy"></div>
+        <div class="cert-info">
+          <span class="cert-org">LABEF · UAC</span>
+          <h3>Équations structurelles sous R</h3>
+          <p>Applications en santé, environnement et agronomie · Grand-Popo, décembre 2025</p>
+        </div>
+        <span class="cert-zoom"><svg viewBox="0 0 24 24" class="ico"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span>
+      </button>
+
+      <button class="cert-card reveal" data-cat="math" data-src="assets/certs/cimpa-icmpa-2026.jpeg"
+              data-title="École CIMPA, chaire UNESCO ICMPA" data-issuer="UNESCO · ICMPA, Université d'Abomey-Calavi" data-date="Juillet 2026">
+        <div class="cert-thumb"><img src="assets/certs/cimpa-icmpa-2026.jpeg" alt="Certificat CIMPA School, chaire UNESCO ICMPA, 2026" loading="lazy"></div>
+        <div class="cert-info">
+          <span class="cert-org">UNESCO · ICMPA</span>
+          <h3>École CIMPA, structures combinatoires</h3>
+          <p>Topological and Extremal Properties of Combinatorial Structures · Abomey-Calavi, juillet 2026</p>
+        </div>
+        <span class="cert-zoom"><svg viewBox="0 0 24 24" class="ico"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span>
+      </button>
+
+      <button class="cert-card reveal" data-cat="ia" data-src="assets/certs/indabax-benin-2026.png" data-pdf="assets/certs/indabax-benin-2026.pdf"
+              data-title="IndabaX Bénin 2026" data-issuer="Deep Learning IndabaX, Benin Republic" data-date="10 au 12 septembre 2026">
+        <div class="cert-thumb"><img src="assets/certs/indabax-benin-2026.png" alt="Certificat de participation IndabaX Bénin 2026" loading="lazy"></div>
+        <div class="cert-info">
+          <span class="cert-org">Deep Learning IndabaX</span>
+          <h3>IndabaX Bénin 2026</h3>
+          <p>Participation en présentiel · 10 au 12 septembre 2026</p>
+        </div>
+        <span class="cert-zoom"><svg viewBox="0 0 24 24" class="ico"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span>
+      </button>
+
+      <button class="cert-card reveal" data-cat="math" data-src="assets/certs/hpc-cea-smia-2024.jpeg"
+              data-title="Initiation au Calcul Haute Performance" data-issuer="IMSP · CEA-SMIA · UNSTIM" data-date="24 au 28 juin 2024">
+        <div class="cert-thumb"><img src="assets/certs/hpc-cea-smia-2024.jpeg" alt="Attestation Initiation au Calcul Haute Performance, CEA-SMIA, 2024" loading="lazy"></div>
+        <div class="cert-info">
+          <span class="cert-org">IMSP · CEA-SMIA</span>
+          <h3>Calcul Haute Performance</h3>
+          <p>Linux, serveurs distants, SLURM, programmation parallèle · juin 2024</p>
+        </div>
+        <span class="cert-zoom"><svg viewBox="0 0 24 24" class="ico"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span>
+      </button>
+
+      <button class="cert-card reveal" data-cat="dev" data-src="assets/certs/tita-mtn-2024.jpeg"
+              data-title="TITA Digital Skills, Découvre ton Talent Numérique" data-issuer="MTN Bénin · Digital Valley · UAC" data-date="20 septembre 2024">
+        <div class="cert-thumb"><img src="assets/certs/tita-mtn-2024.jpeg" alt="Certificat de réussite TITA Digital Skills by MTN, 2024" loading="lazy"></div>
+        <div class="cert-info">
+          <span class="cert-org">MTN Bénin · TITA</span>
+          <h3>TITA Digital Skills</h3>
+          <p>Découvre ton Talent Numérique · Cotonou, septembre 2024</p>
+        </div>
+        <span class="cert-zoom"><svg viewBox="0 0 24 24" class="ico"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span>
+      </button>
+
+      <button class="cert-card reveal" data-cat="dev" data-src="assets/certs/huawei-seeds-2025.jpeg"
+              data-title="Huawei Seeds for the Future" data-issuer="Huawei, Talent Development Flagship Project" data-date="19 septembre 2025">
+        <div class="cert-thumb"><img src="assets/certs/huawei-seeds-2025.jpeg" alt="Certificate of Completion Huawei Seeds for the Future 2025" loading="lazy"></div>
+        <div class="cert-info">
+          <span class="cert-org">Huawei</span>
+          <h3>Seeds for the Future</h3>
+          <p>Talent Development Flagship Project : technologies innovantes, échanges interculturels et entrepreneuriat · septembre 2025</p>
+        </div>
+        <span class="cert-zoom"><svg viewBox="0 0 24 24" class="ico"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span>
+      </button>
+
+      <button class="cert-card reveal" data-cat="entre" data-src="assets/certs/empretec-cepepe-2025.jpeg"
+              data-title="EMPRETEC, Développement de l'Esprit d'Entreprise" data-issuer="CePEPE · EMPRETEC Bénin · ADPME · CNUCED" data-date="10 au 15 novembre 2025">
+        <div class="cert-thumb"><img src="assets/certs/empretec-cepepe-2025.jpeg" alt="Certificat EMPRETEC CePEPE ADPME, 2025" loading="lazy"></div>
+        <div class="cert-info">
+          <span class="cert-org">CePEPE · EMPRETEC</span>
+          <h3>Esprit d'entreprise (EGDM)</h3>
+          <p>Atelier CNUCED EMPRETEC · Abomey, novembre 2025</p>
+        </div>
+        <span class="cert-zoom"><svg viewBox="0 0 24 24" class="ico"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span>
+      </button>
+
+      <button class="cert-card reveal" data-cat="dev" data-src="assets/certs/learn2code-etrilabs-2022.jpeg"
+              data-title="Learn2Code, édition 2022" data-issuer="EtriLabs" data-date="08 au 31 août 2022">
+        <div class="cert-thumb"><img src="assets/certs/learn2code-etrilabs-2022.jpeg" alt="Certificat Learn2code EtriLabs 2022" loading="lazy"></div>
+        <div class="cert-info">
+          <span class="cert-org">EtriLabs</span>
+          <h3>Learn2Code 2022</h3>
+          <p>Développement web, Photoshop et électronique · Cotonou, août 2022</p>
+        </div>
+        <span class="cert-zoom"><svg viewBox="0 0 24 24" class="ico"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="contact-card reveal">
+      <div class="contact-shine"></div>
+      <span class="section-num">07</span>
+      <h2 class="contact-title" data-split>Construisons quelque chose<br><em>qui compte.</em></h2>
+      <p class="contact-sub">
+        Une idée de projet, une opportunité de stage, une collaboration de recherche ?
+        Écrivez-moi, je réponds vite.
+      </p>
+
+      <div class="contact-rows">
+        <a href="mailto:ursusghd@gmail.com" class="contact-row" data-magnetic>
+          <svg viewBox="0 0 24 24" class="ico"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          <span class="cr-label">Email</span>
+          <span class="cr-value">ursusghd@gmail.com</span>
+          <svg viewBox="0 0 24 24" class="ico cr-arrow"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="https://wa.me/2290166245656" target="_blank" rel="noopener" class="contact-row" data-magnetic>
+          <svg viewBox="0 0 24 24" class="ico-fill"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.2l-.9 1.1c-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.8-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-1 1-1.3 2.3-1 3.7.6 2.4 2.9 5.5 6.5 7 2.4 1 3.4.8 4.3.7.9-.1 2-1 2.3-1.8.3-.8.3-1.5.2-1.6-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+          <span class="cr-label">WhatsApp</span>
+          <span class="cr-value">+229 01 66 24 56 56</span>
+          <svg viewBox="0 0 24 24" class="ico cr-arrow"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/ursus-hornel-gbaguidi-620ba9281" target="_blank" rel="noopener" class="contact-row" data-magnetic>
+          <svg viewBox="0 0 24 24" class="ico-fill"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          <span class="cr-label">LinkedIn</span>
+          <span class="cr-value">ursus-hornel-gbaguidi</span>
+          <svg viewBox="0 0 24 24" class="ico cr-arrow"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="https://github.com/Ursusghd" target="_blank" rel="noopener" class="contact-row" data-magnetic>
+          <svg viewBox="0 0 24 24" class="ico-fill"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.12 3.06.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+          <span class="cr-label">GitHub</span>
+          <span class="cr-value">Ursusghd</span>
+          <svg viewBox="0 0 24 24" class="ico cr-arrow"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <p class="contact-loc">
+        <svg viewBox="0 0 24 24" class="ico"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        Abomey, Bénin · ouvert au remote
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-in">
+    <span>© 2026 Ursus Hornel GBAGUIDI</span>
+    <span class="footer-mid">Data Scientist &amp; ML Engineer · Abomey, Bénin</span>
+    <a href="#home" class="to-top" data-magnetic aria-label="Retour en haut">
+      <svg class="ring" viewBox="0 0 56 56" aria-hidden="true"><circle id="ring-c" cx="28" cy="28" r="26"/></svg>
+      <svg viewBox="0 0 24 24" class="ico"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </a>
+  </div>
+</footer>
+
+<!-- ═══ LIGHTBOX ═══ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Aperçu du certificat" hidden>
+  <button class="lb-close" id="lb-close" aria-label="Fermer">
+    <svg viewBox="0 0 24 24" class="ico"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+  <button class="lb-nav lb-prev" id="lb-prev" aria-label="Certificat précédent">
+    <svg viewBox="0 0 24 24" class="ico"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <button class="lb-nav lb-next" id="lb-next" aria-label="Certificat suivant">
+    <svg viewBox="0 0 24 24" class="ico"><path d="M9 6l6 6-6 6"/></svg>
+  </button>
+  <figure class="lb-figure">
+    <img id="lb-img" src="" alt="">
+    <figcaption class="lb-cap">
+      <h3 id="lb-title"></h3>
+      <p><span id="lb-issuer"></span> · <span id="lb-date"></span></p>
+      <a id="lb-pdf" href="#" target="_blank" rel="noopener" class="btn btn-ghost sm" hidden>
+        Ouvrir le PDF
+        <svg viewBox="0 0 24 24" class="ico"><path d="M7 17 17 7M7 7h10v10"/></svg>
+      </a>
+    </figcaption>
+  </figure>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
