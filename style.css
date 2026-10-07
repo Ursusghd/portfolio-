@@ -167,8 +167,8 @@ body.cursor-on .cursor-dot,body.cursor-on .cursor-ring{opacity:1}
 }
 .nav-cta:hover{background:var(--gold-hi);box-shadow:0 10px 30px rgba(127,168,255,.3)}
 
-.nav-burger{display:none;width:44px;height:44px;place-items:center;gap:5px;flex-direction:column;border-radius:12px}
-.nav-burger span{display:block;width:20px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
+.nav-burger{display:none;width:44px;height:44px;border-radius:12px;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0}
+.nav-burger span{display:block;flex:none;width:20px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
 .nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
 .nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
@@ -246,25 +246,26 @@ body.cursor-on .cursor-dot,body.cursor-on .cursor-ring{opacity:1}
 @keyframes shine{to{background-position:200% center}}
 
 /* glitch */
-.glitch{position:relative}
+.glitch{position:relative;isolation:isolate}
 .glitch::before,.glitch::after{
-  content:attr(data-text);position:absolute;inset:0;
-  -webkit-background-clip:text;background-clip:text;
-  opacity:0;pointer-events:none;
+  content:attr(data-text);
+  position:absolute;left:0;top:0;width:100%;
+  background:none;-webkit-background-clip:border-box;background-clip:border-box;
+  opacity:0;pointer-events:none;z-index:-1;
 }
-.glitch::before{color:var(--cyan);animation:gl1 4.5s infinite}
-.glitch::after{color:#F43F5E;animation:gl2 4.5s infinite}
+.glitch::before{color:rgba(56,189,248,.85);animation:gl1 7s steps(1) infinite}
+.glitch::after{color:rgba(244,63,94,.75);animation:gl2 7s steps(1) infinite}
 @keyframes gl1{
-  0%,92%,100%{opacity:0;transform:none}
-  93%{opacity:.75;transform:translate(-3px,1px);clip-path:inset(12% 0 58% 0)}
-  95%{opacity:.75;transform:translate(3px,-1px);clip-path:inset(62% 0 18% 0)}
-  97%{opacity:0}
+  0%,95.4%,100%{opacity:0;transform:none}
+  95.6%{opacity:1;transform:translate(-2px,1px)}
+  96.2%{opacity:1;transform:translate(2px,-1px)}
+  96.8%{opacity:0}
 }
 @keyframes gl2{
-  0%,92%,100%{opacity:0;transform:none}
-  94%{opacity:.7;transform:translate(3px,-2px);clip-path:inset(38% 0 32% 0)}
-  96%{opacity:.7;transform:translate(-3px,2px);clip-path:inset(8% 0 72% 0)}
-  98%{opacity:0}
+  0%,95.4%,100%{opacity:0;transform:none}
+  95.9%{opacity:1;transform:translate(2px,-1px)}
+  96.5%{opacity:1;transform:translate(-2px,1px)}
+  97%{opacity:0}
 }
 
 .hero-role{
@@ -307,7 +308,7 @@ body.cursor-on .cursor-dot,body.cursor-on .cursor-ring{opacity:1}
   border:1px solid var(--line-2);
   box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 0 1px rgba(127,168,255,.08) inset;
 }
-.portrait-frame img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.05)}
+.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center 18%;filter:saturate(1.05) contrast(1.05)}
 .portrait-frame::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(180deg,transparent 42%,rgba(7,11,22,.72) 100%);
@@ -763,7 +764,8 @@ body.lb-open{overflow:hidden}
   .hero-title{font-size:clamp(42px,15vw,62px)}
   .hero-stats{gap:18px 26px}
   .stat{min-width:calc(50% - 13px)}
-  .hero-actions .btn{flex:1;justify-content:center;min-width:150px}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions .btn{justify-content:center;white-space:nowrap}
 
   /* pastilles flottantes : contenues dans le cadre */
   .float-chip{font-size:10.5px;padding:7px 11px;gap:6px}
@@ -974,3 +976,10 @@ body.cursor-on .spotlight{opacity:1}
   .portrait-frame::before{display:none}
   .section-num::before{transform:scaleX(1)}
 }
+
+.inline-link{
+  color:var(--gold-hi);font-weight:600;
+  border-bottom:1px solid rgba(127,168,255,.35);
+  transition:border-color .3s var(--ease-soft);
+}
+.inline-link:hover{border-color:var(--gold-hi)}
