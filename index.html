@@ -802,6 +802,17 @@
   </figure>
 </div>
 
+<script>
+// filet de sécurité : si le script principal échoue, on affiche quand même tout
+setTimeout(function(){
+  document.querySelectorAll('.reveal:not(.in),[data-split]:not(.in)')
+    .forEach(function(el){ el.classList.add('in'); });
+  var c = document.getElementById('curtain');
+  if (c) { c.classList.add('lift','gone'); }
+  var p = document.getElementById('preloader');
+  if (p) { p.classList.add('done'); }
+}, 3500);
+</script>
 <script src="script.js"></script>
 </body>
 </html>

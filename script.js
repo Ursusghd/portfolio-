@@ -76,7 +76,8 @@
   /* ─── Neural network canvas ─── */
   if (!reduced) {
     const cv = $('#neural-canvas');
-    const ctx = cv.getContext('2d');
+    const ctx = cv && cv.getContext && cv.getContext('2d');
+    if (!ctx) return;
     let w, h, nodes = [], dpr = Math.min(devicePixelRatio || 1, 2);
     const pointer = { x: -9999, y: -9999 };
 
@@ -150,7 +151,7 @@
     const roles = [
       'Data Scientist & ML Engineer',
       'Champion Hackathon MTN Yello\'Care',
-      'Champion national CIF — LBC/FT/FP',
+      'Champion national CIF, conformité LBC/FT/FP',
       'Champion UNESCO Water4Future',
       'Co-fondateur de SNOW',
       'Ingénieur en Génie Mathématique'
